@@ -17,14 +17,26 @@ public class ASumar {
 	 * @return cadena con el resultado de la suma. Ej: "2 + 6 + 5 + 4 = 17".
 	 */
 	public String sumativo(String numero) {
+		String cadena = "";
         if (numero.length() == 1) {
             return (numero + " = " + numero);
         } else if (numero.length() > 1) {
         	if (numero.substring(0,1).equals("-")) {
         		return "Negativo. Siempre negativo";
+        	} else {
+        		int suma = 0;
+        		for (int i = 0; i < numero.length(); i++) {
+        			String c = numero.substring(i, i+1);
+        			if (i > 0) {
+        				cadena += " + ";
+        			}
+        			cadena += c;
+        			suma += Integer.valueOf(c).intValue();
+        		}
+        		cadena += " = " + suma;
         	}
         }
-        return "";
+        return cadena;
 	}
 
 }
