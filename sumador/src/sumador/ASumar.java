@@ -18,7 +18,11 @@ public class ASumar {
 		String numero = cad;
         if (numero.length() == 1) {
             return (numero + " = " + numero);
-        } 
+        } else if (numero.length() > 1) {
+        	if (numero.substring(0,1).equals("-")) {
+        		return "Negativo. Siempre negativo";
+        	}
+        }
         return "";
 	}
 
